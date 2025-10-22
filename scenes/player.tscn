@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk2k5wi3e72ar"]
+
+[ext_resource type="Script" uid="uid://bso5a02t28t6s" path="res://scripts/Player.cs" id="1_g2els"]
+[ext_resource type="SpriteFrames" uid="uid://jsr4hh40o40m" path="res://sprites/frames/character2_sprite_frames.tres" id="3_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
+size = Vector2(10, 2)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_g2els")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("3_qhqgy")
+animation = &"idle_s"
+autoplay = "idle_f"
+offset = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_iywne")
